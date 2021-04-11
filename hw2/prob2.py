@@ -17,7 +17,7 @@ class SmartCalendar(Calendar):
         for day in day_list:
             for schedule in self.daily_schedule :
                 printing_schedule_list.append(
-                        Schedule(schedule.name,day +' ' +schedule.start, day +' ' +schedule.end)
+                    Schedule(schedule.name,day +' ' +schedule.start, day +' ' +schedule.end)
                 )
 
         for schedule in self.schedule_list:
@@ -26,12 +26,11 @@ class SmartCalendar(Calendar):
         printing_schedule_list.sort()
 
         for idx, schedule in enumerate(printing_schedule_list) :
-            result += str(schedule)
+            result += str(schedule) + '\n'
             if idx == 9:
                 break
-            result +='\n'
 
-        return result 
+        return result.strip()
             
     def _convert_daily_time_to_int(self, time):
         hour = list(map(int, time.split(":")))

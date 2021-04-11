@@ -26,9 +26,8 @@ class Calendar :
             result += str(schedule) + '\n'
             if idx == 9:
                 break
-            
 
-        return result 
+        return result.strip()
 
     def _convert_time_to_int(self, time):
         day, hour = time.split()
